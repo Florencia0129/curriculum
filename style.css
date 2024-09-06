@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #ff69b4; /* Rosa */
+    --secondary-color: #8a2be2; /* Violeta */
+    --text-color: #e0e0e0;
+    --background-color: #1a1a1a;
+    --card-background: #2a2a2a;
+    --code-color: #00ff00; /* Color verde para el código */
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .skill:hover {
+    transform: scale(1.05);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .project {
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .project:hover {
+    box-shadow: 0 6px 12px rgba(138, 43, 226, 0.2);
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #ff1493; /* Rosa más oscuro */
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .code-section {
+    background-color: #0a0a0a;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--code-color);
+    position: relative;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+
+  .code-section::before {
+    content: '<html>';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #888;
+  }
+
+  .code-section::after {
+    content: '</html>';
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    color: #888;
+  }
+
+  .code-line {
+    display: block;
+    margin-left: 1.5rem;
+    position: relative;
+  }
+
+  .code-line::before {
+    content: attr(data-line);
+    position: absolute;
+    left: -1.5rem;
+    color: #555;
+    font-size: 0.8rem;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .contact-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+  }
+
+  .contact-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .contact-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects {
+      grid-template-columns: 1fr;
+    }
+  }
